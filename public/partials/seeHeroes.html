@@ -1,0 +1,21 @@
+<div class="Jumbotron" ng-controller="heroController">
+
+    <button type="button" ng-click="getHeroRecords()" name="button">show heros</button>
+    <!--'show heros' button clicked initiating getHeroRecords() function go to script.js $scope.getHeroRecord -->
+
+      <table>
+        <!-- ng-repeat pulls the info back onto the dom
+        anything can be called anything but here refers to the array allTheHeros -->
+        <tr ng-repeat="anything in allTheHeroes">
+          <!-- One of my problems on friday. miss-spelled allThe Heroes without an e! -->
+
+          <td>alias: {{anything.alias}}</td>
+          <td>first_name: {{anything.first_name}}</td>
+          <td>last_name: {{anything.last_name}}</td>
+          <td>city: {{anything.city}}</td>
+          <td>power_name: {{anything.power_name}}</td>
+          <!--  'remove Hero' button calls the function removeHero() w/the parameter of anything._id -->
+          <td><button type="button" ng-click="removeHero(anything._id)" name="button">remove</button></td>
+        </tr>
+      </table>
+</div>

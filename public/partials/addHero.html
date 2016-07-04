@@ -1,0 +1,20 @@
+<div class="Jumbotron" ng-controller="heroController">
+    <!--  ng model tag refers to the script.js heroObjectToSend-->
+    <input type="text" ng-model="aliasIn" name="name" placeholder="alias" value="">
+    <input type="text" ng-model="first_nameIn" name="name" placeholder="first_name" value="">
+    <input type="text" ng-model="last_nameIn" name="name" placeholder="last_name" value="">
+    <input type="text" ng-model="cityIn" name="name" placeholder="city" value="">
+          <select ng-model="power_nameIn" name="name" placeholder="power_name">
+            <option value="Invisibility">Invisibility</option>
+            <option value="Flight">Flight</option>
+            <option value="Super Speed">Super Speed</option>
+            <option value="Heat Vision">Heat Vision</option>
+            <option value="Super Strength">Super Strength</option>
+            <option value="Accelerated Healing">Accelerated Healing</option>
+            <option value="Power Blast">Power Blast</option>
+            <option value="Animal Affinity">Animal Affinity</option>
+          </select>
+
+    <!-- starts the function addHeroRecord()  when the user clicks on the button-->
+    <button type="button" ng-click="addHeroRecord();" name="button">add hero</button>
+</div>

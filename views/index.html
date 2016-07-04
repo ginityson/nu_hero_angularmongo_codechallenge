@@ -3,45 +3,20 @@
 
   <head>
     <meta charset="utf-8">
-    <title>Angular MongoDB Code Challenge</title>
-    <script  src="vendors/angular.min.js"></script>
-    <script  src="scripts/script.js"></script>
-
+      <title>Angular MongoDB Code Challenge</title>
+        <script  src="vendors/angular.min.js"></script>
+        <script src="vendors/ui-bootstrap-tpls-1.3.3.min.js" charset="utf-8"></script>
+        <script  src="scripts/script.js"></script>
+        <link rel="stylesheet" href="/vendors/bootstrap.css" media="screen" title="no title" charset="utf-8">
   </head>
+
   <body>
-    <h1>Super Hero Tracker</h2>
-      <h2> please show up</h2>
-
-      <div ng-controller="heroController">
-          <!--  ng model tag refers to the script.js heroObjectToSend-->
-          <input type="text" ng-model="alias" name="name" placeholder="alias" value="">
-          <input type="text" ng-model="first_name" name="name" placeholder="first_name" value="">
-          <input type="text" ng-model="last_name" name="name" placeholder="last_name" value="">
-          <input type="text" ng-model="city" name="name" placeholder="city" value="">
-          <input type="text" ng-model="power_name" name="name" placeholder="power_name" value=""> -->
-
-          <!-- starts the function addHeroRecord()  when the user clicks on the button-->
-          <button type="button" ng-click="addHeroRecord();" name="button">add hero</button>
-
-          <button type="button" ng-click="getHeroRecords()" name="button">show heros</button>
-    <!--'show heros' button clicked initiating getHeroRecords() function go to script.js $scope.getHeroRecord -->
-
-    <table>
-      <!-- ng-repeat pulls the info back onto the dom
-      anything can be called anything but here refers to the array allTheHeros -->
-      <tr ng-repeat="anything in allTheHeros">
-        
-        <td>alias: {{anything.alias}}</td>
-        <td>first_name: {{anything.first_name}}</td>
-        <td>last_name: {{anything.last_name}}</td>
-        <td>city: {{anything.city}}</td>
-        <td>power_name: {{anything.power_name}}</td>
-        <!--  'remove Hero' button calls the function removeHero() w/the parameter of $index is this an NG varialbe now?-->
-        <td><button type="button" ng-click="removeHero($index)" name="button">remove</button></td>
-      </tr>
-    </table>
-      </div>
-
-
+    <div ng-controller="TabController">
+          <uib-tabset active="active">
+            <uib-tab ng-repeat="tab in tabs" ng-click="recvHeroes()" heading="{{tab.title}}">
+              <div ng-include="tab.content"></div>
+            </uib-tab>
+          </uib-tabset>
+    </div>
   </body>
 </html>
